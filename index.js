@@ -17,7 +17,7 @@ video.addEventListener('canplaythrough', (e) => {
       } else {
         // console.log(video.currentTime);
         // console.log(video.duration);
-        width = Math.ceil(video.currentTime / video.duration) * 100;
+        width = Math.ceil((video.currentTime / video.duration) * 100);
         elem.style.width = width + '%';
       }
     }
