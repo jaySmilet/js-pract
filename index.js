@@ -1,6 +1,25 @@
 // Import stylesheets
 import './style.css';
 
-// Write Javascript code!
-const appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h1>JS Starter</h1>`;
+// Write Javascript code!\
+const video = document.getElementById('myVideo');
+video.addEventListener('canplaythrough', (e) => {
+  var i = 0;
+  if (i == 0) {
+    i = 1;
+    var elem = document.getElementById('myBar');
+    var width = 1;
+    var id = setInterval(frame, 200);
+    function frame() {
+      if (video.ended || width >= 100) {
+        clearInterval(id);
+        i = 0;
+      } else {
+        // console.log(video.currentTime);
+        // console.log(video.duration);
+        width = (video.currentTime / video.duration) * 100;
+        elem.style.width = width + '%';
+      }
+    }
+  }
+});

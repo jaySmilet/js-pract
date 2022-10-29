@@ -1,3 +1,22 @@
-h1, h2 {
-  font-family: Lato;
+#app {
+  width: 80%;
+  height: 300px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+#myVideo {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+#myProgress {
+  width: 100%;
+  background-color: #ddd;
+}
+
+#myBar {
+  width: 1%;
+  height: 30px;
+  background-color: #04aa6d;
 }
