@@ -151,3 +151,13 @@ figure[data-fullscreen='true'] .controls li {
 figure[data-fullscreen='true'] .controls .progress {
   width: 68%;
 }
+.controls button[data-state='subtitles'] {
+  height: 85%;
+  text-indent: 0;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #666;
+  background: #000;
+  border-radius: 2px;
+}

@@ -27,6 +27,7 @@ if (supportsVideo) {
   const progress = document.getElementById('progress');
   const progressBar = document.getElementById('progress-bar');
   const fullscreen = document.getElementById('fs');
+  const subtitles = document.getElementById('subtitles');
 
   // Check if the browser supports the Fullscreen API
   var fullScreenEnabled = !!(
@@ -115,6 +116,12 @@ if (supportsVideo) {
         video.pause();
       }
     });
+
+    // Turn off all subtitles
+    for (var i = 0; i < video.textTracks.length; i++) {
+      video.textTracks[i].mode = 'hidden';
+      console.log(video.textTracks);
+    }
 
     // The Media API has no 'stop()' function, so pause the video and reset its time and the progress bar
     stop.addEventListener('click', (e) => {

@@ -1,25 +1,35 @@
 <figure id="videoContainer">
-  <video
-    id="video"
-    controls
-    preload="metadata"
-    poster="https://raw.githubusercontent.com/iandevlin/iandevlin.github.io/master/mdn/video-player/img/poster.jpg"
-  >
+  <video id="video" controls preload="metadata">
     <source
-      src="https://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4"
+      src="https://iandevlin.github.io/mdn/video-player-with-captions/video/sintel-short.mp4"
       type="video/mp4"
     />
     <source
-      src="https://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.webm"
+      src="https://iandevlin.github.io/mdn/video-player-with-captions/video/sintel-short.webm"
       type="video/webm"
     />
-    <source
-      src="https://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.ogg"
-      type="video/ogg"
+    <track
+      label="English"
+      kind="subtitles"
+      srclang="en"
+      src="https://iandevlin.github.io/mdn/video-player-with-captions/subtitles/vtt/sintel-en.vtt"
+      default
+    />
+    <track
+      label="Deutsch"
+      kind="subtitles"
+      srclang="de"
+      src="https://iandevlin.github.io/mdn/video-player-with-captions/subtitles/vtt/sintel-de.vtt"
+    />
+    <track
+      label="Español"
+      kind="subtitles"
+      srclang="es"
+      src="https://iandevlin.github.io/mdn/video-player-with-captions/subtitles/vtt/sintel-es.vtt"
     />
     <!-- Offer download -->
     <a
-      href="https://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4"
+      href="https://iandevlin.github.io/mdn/video-player-with-captions/video/sintel-short.mp4"
       >Download MP4</a
     >
   </video>
@@ -35,6 +45,9 @@
     <li><button id="volinc" type="button">Vol+</button></li>
     <li><button id="voldec" type="button">Vol-</button></li>
     <li><button id="fs" type="button">Fullscreen</button></li>
+    <li>
+      <button id="subtitles" type="button" data-state="subtitles">CC</button>
+    </li>
   </ul>
 
   <figcaption>
