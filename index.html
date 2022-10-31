@@ -1,5 +1,10 @@
 <figure id="videoContainer">
-  <video id="video" controls preload="metadata" poster="img/poster.jpg">
+  <video
+    id="video"
+    controls
+    preload="metadata"
+    poster="https://raw.githubusercontent.com/iandevlin/iandevlin.github.io/master/mdn/video-player/img/poster.jpg"
+  >
     <source
       src="https://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4"
       type="video/mp4"
@@ -18,6 +23,20 @@
       >Download MP4</a
     >
   </video>
+  <ul id="video-controls" class="controls">
+    <li><button id="playpause" type="button">Play/Pause</button></li>
+    <li><button id="stop" type="button">Stop</button></li>
+    <li class="progress">
+      <progress id="progress" value="0" min="0">
+        <span id="progress-bar"></span>
+      </progress>
+    </li>
+    <li><button id="mute" type="button">Mute/Unmute</button></li>
+    <li><button id="volinc" type="button">Vol+</button></li>
+    <li><button id="voldec" type="button">Vol-</button></li>
+    <li><button id="fs" type="button">Fullscreen</button></li>
+  </ul>
+
   <figcaption>
     &copy; Blender Foundation |
     <a href="http://mango.blender.org">mango.blender.org</a>
