@@ -1,12 +1,22 @@
-<div id="app">
-  <div id="myProgress">
-    <div id="myBar"></div>
-  </div>
-  <video autoplay controls muted id="myVideo">
+<figure id="videoContainer">
+  <video id="video" controls preload="metadata" poster="img/poster.jpg">
     <source
-      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4"
+      src="video/tears-of-steel-battle-clip-medium.mp4"
       type="video/mp4"
     />
-    Your browser does not support HTML5 video.
+    <source
+      src="video/tears-of-steel-battle-clip-medium.webm"
+      type="video/webm"
+    />
+    <source
+      src="video/tears-of-steel-battle-clip-medium.ogg"
+      type="video/ogg"
+    />
+    <!-- Offer download -->
+    <a href="video/tears-of-steel-battle-clip-medium.mp4">Download MP4</a>
   </video>
-</div>
+  <figcaption>
+    &copy; Blender Foundation |
+    <a href="http://mango.blender.org">mango.blender.org</a>
+  </figcaption>
+</figure>
