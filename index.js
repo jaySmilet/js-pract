@@ -119,8 +119,23 @@ if (supportsVideo) {
 
     // Turn off all subtitles
     for (var i = 0; i < video.textTracks.length; i++) {
-      video.textTracks[i].mode = 'hidden';
       console.log(video.textTracks);
+      video.textTracks[i].mode = 'hidden';
+    }
+
+    // Creates and returns a menu item for the subtitles language menu
+    var subtitleMenuButtons = [];
+    var createMenuItem = (id, lang, label) => {
+      var listItem = document.createElement('li');
+      var button = listItem.appendChild(document.createElement());
+    };
+
+    // Go through each one and build a small clickable list, and when each item is clicked on, set its mode to be "showing" and the others to be "hidden"
+    var subtitlesMenu;
+    if (video.textTracks) {
+      var df = document.createDocumentFragment();
+      var subtitlesMenu = df.appendChild(document.createElement('ul'));
+      subtitlesMenu.className = 'subtitles-menu';
     }
 
     // The Media API has no 'stop()' function, so pause the video and reset its time and the progress bar
