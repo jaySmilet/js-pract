@@ -140,12 +140,13 @@ if (supportsVideo) {
           subtitleMenuButtons[i].setAttribute('data-state', 'inactive');
         });
         // Find the language to activate
-        var lang = this.getAttribute('lang');
+        console.log(e);
+        var lang = e.target.getAttribute('lang');
         for (var i = 0; i < video.textTracks.length; i++) {
           // For the 'subtitles-off' button, the first condition will never match so all will subtitles be turned off
           if (video.textTracks[i].language == lang) {
             video.textTracks[i].mode = 'showing';
-            this.setAttribute('data-state', 'active');
+            e.target.setAttribute('data-state', 'active');
           } else {
             video.textTracks[i].mode = 'hidden';
           }
@@ -162,7 +163,24 @@ if (supportsVideo) {
       var df = document.createDocumentFragment();
       var subtitlesMenu = df.appendChild(document.createElement('ul'));
       subtitlesMenu.className = 'subtitles-menu';
+      subtitlesMenu.appendChild(createMenuItem('subtitles-off', '', 'off'));
+      for (var i = 0; i < video.textTracks.length; i++) {
+        subtitlesMenu.appendChild(
+          createMenuItem(
+            'subtitles-' + video.textTracks[i].language,
+            video.textTracks[i].language,
+            video.textTracks[i].label
+          )
+        );
+      }
+      videoContainer.appendChild(subtitlesMenu);
     }
+    subtitles.addEventListener('click', (e) => {
+      if (subtitlesMenu) {
+        subtitlesMenu.style.display =
+          subtitlesMenu.style.display == 'block' ? 'none' : 'block';
+      }
+    });
 
     // The Media API has no 'stop()' function, so pause the video and reset its time and the progress bar
     stop.addEventListener('click', (e) => {
