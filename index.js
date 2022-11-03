@@ -127,7 +127,33 @@ if (supportsVideo) {
     var subtitleMenuButtons = [];
     var createMenuItem = (id, lang, label) => {
       var listItem = document.createElement('li');
-      var button = listItem.appendChild(document.createElement());
+      var button = listItem.appendChild(document.createElement('button'));
+      button.setAttribute('id', id);
+      button.className = 'subtitles-button';
+      if (lang.length > 0) button.setAttribute('lang', lang);
+      button.value = label;
+      button.setAttribute('data-state', 'inactive');
+      button.appendChild(document.createTextNode(label));
+      button.addEventListener('click', (e) => {
+        // Set all buttons to inactive
+        subtitleMenuButtons.map((v, i, a) => {
+          subtitleMenuButtons[i].setAttribute('data-state', 'inactive');
+        });
+        // Find the language to activate
+        var lang = this.getAttribute('lang');
+        for (var i = 0; i < video.textTracks.length; i++) {
+          // For the 'subtitles-off' button, the first condition will never match so all will subtitles be turned off
+          if (video.textTracks[i].language == lang) {
+            video.textTracks[i].mode = 'showing';
+            this.setAttribute('data-state', 'active');
+          } else {
+            video.textTracks[i].mode = 'hidden';
+          }
+        }
+        subtitlesMenu.style.display = 'none';
+      });
+      subtitleMenuButtons.push(button);
+      return listItem;
     };
 
     // Go through each one and build a small clickable list, and when each item is clicked on, set its mode to be "showing" and the others to be "hidden"
