@@ -24,6 +24,8 @@ video.addEventListener('canplaythrough', (e) => {
   }
 });
 
-video.addEventListener('timeupdate',()=>{
-  console.log(video.currentTime)
-})
+video.addEventListener('timeupdate', () => {
+  if (Math.floor(video.currentTime % 3) == 0) {
+    console.log(video.currentTime % 3);
+  }
+});
