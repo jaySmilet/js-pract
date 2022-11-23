@@ -4,6 +4,7 @@ import './style.css';
 // Write Javascript code!\
 const video = document.getElementById('myVideo');
 video.addEventListener('canplaythrough', (e) => {
+  console.log(video.currentTime % 3);
   var i = 0;
   if (i == 0) {
     i = 1;
