@@ -29,4 +29,4 @@ console.log(max_exp_name, max_exp_value);
 
 obj.innerHTML = `${JSON.stringify(expressionObj)}`;
 
-appDiv.innerHTML = `${max_exp_name}-${max_exp_value}`;
+appDiv.innerHTML = `${max_exp_name} ${max_exp_value}`;
