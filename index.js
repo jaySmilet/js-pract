@@ -9,7 +9,7 @@ video.addEventListener('canplaythrough', (e) => {
     i = 1;
     var elem = document.getElementById('myBar');
     var width = 1;
-    var id = setInterval(frame, 1000);
+    var id = setInterval(frame, 200);
     function frame() {
       if (video.ended || width >= 100) {
         clearInterval(id);
