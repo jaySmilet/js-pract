@@ -15,7 +15,7 @@ video.addEventListener('canplaythrough', (e) => {
         clearInterval(id);
         i = 0;
       } else {
-        console.log(Math.floor(video.currentTime));
+        // console.log(video.currentTime);
         // console.log(video.duration);
         width = Math.ceil((video.currentTime / video.duration) * 100);
         elem.style.width = width + '%';
@@ -23,3 +23,7 @@ video.addEventListener('canplaythrough', (e) => {
     }
   }
 });
+
+video.addEventListener('timeupdate',()=>{
+  console.log(video.currentTime)
+})
