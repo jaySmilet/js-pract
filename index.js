@@ -4,7 +4,6 @@ import './style.css';
 // Write Javascript code!\
 const video = document.getElementById('myVideo');
 video.addEventListener('canplaythrough', (e) => {
-  console.log(video.currentTime % 3);
   var i = 0;
   if (i == 0) {
     i = 1;
@@ -16,7 +15,7 @@ video.addEventListener('canplaythrough', (e) => {
         clearInterval(id);
         i = 0;
       } else {
-        // console.log(video.currentTime);
+        console.log(video.currentTime % 3);
         // console.log(video.duration);
         width = Math.ceil((video.currentTime / video.duration) * 100);
         elem.style.width = width + '%';
