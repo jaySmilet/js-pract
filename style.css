@@ -1,3 +1,10 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .spinner {
   width: 100px;
   height: 100px;
@@ -10,4 +17,39 @@
   height: 100%;
   border: 8px solid transparent;
   border-top-color: aquamarine;
+  border-radius: 50%;
+  animation: spinnerOne 1.3s linear infinite;
+}
+.spinner div:nth-child(2) {
+  border: 8px solid transparent;
+  border-bottom-color: aquamarine;
+  animation: spinnerTwo 1.3s linear infinite;
+}
+@keyframes spinnerOne {
+  0% {
+    transform: rotate(0deg);
+    border-width: 8px;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-width: 1px;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-width: 8px;
+  }
+}
+@keyframes spinnerTwo {
+  0% {
+    transform: rotate(0deg);
+    border-width: 1px;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-width: 8px;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-width: 1px;
+  }
 }
