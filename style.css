@@ -240,3 +240,38 @@ body {
     background-color: rgb(7, 6, 6);
   }
 }
+
+/* Loading Text */
+.loading {
+  width: 100px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.loading .dots {
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+  animation: anim 1.2s linear infinite;
+}
+.loading .dots:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.loading .dots:nth-child(3) {
+  animation-delay: 0.8s;
+}
+/* .loading .dots:nth-child(3) {
+  animation-delay: 1.2s;
+} */
+@keyframes anim {
+  from {
+    background-color: aqua;
+    transform: scale(0.5);
+  }
+  to {
+    background-color: rgb(48, 6, 165);
+    transform: scale(1);
+  }
+}
